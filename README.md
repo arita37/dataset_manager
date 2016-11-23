@@ -17,7 +17,7 @@ Some example of usage:
 
 import project
 
-#------------------ A new Project -------------------------------------------------------
+#------------------ A new Project ---------------------------------
 proj1= project.project('daily','marketstore','user_name')
 Aptable, Aphisto= proj1.project_export_meta('tuple')   #Export meta data to Pandas
 
@@ -42,12 +42,12 @@ ticker= dfb['daily_us_etf']['sym'].distinct()
 ticker1= bz.odo(ticker, pd.DataFrame)
 
 
-# Commit the Project -----------------------------------------------------------------
+# Commit the Project --------------------------------------------------------
 proj1.table_sessiondata_save(globals())  #Resave again the interpreter memory
 proj1.project_save()  #Commit the change --> A version is produced
 
 
-#------------------ Reload Last version----------------------------------------------------------
+#------------------ Reload Last version--------------------------------------
 proj1= project.project(name='daily',folder='marketstore',user='username', version=-1)
 Aptable, Aphisto= proj1.project_export_meta('tuple')
 
